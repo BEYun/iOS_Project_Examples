@@ -9,11 +9,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBAction func changeBackgroundColorToBlack(_ sender: Any) {
+        
+        view.backgroundColor = UIColor.black
     }
-
-
+    
+    @IBAction func changeToWhite(_ sender: Any) {
+        
+        view.backgroundColor = UIColor.white
+    }
+    
+    
+    @IBAction func changeToBlue(_ sender: Any) {
+        
+        view.backgroundColor = UIColor.blue
+    }
+    
+    
 }
 
