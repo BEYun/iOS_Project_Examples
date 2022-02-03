@@ -63,7 +63,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fMd-t6-Cg1" firstAttribute="leading" secondItem="VRb-sI-NGN" secondAttribute="trailing" constant="57.329999999999998" id="1qX-TQ-XLh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fMd-t6-Cg1" secondAttribute="trailing" constant="55" id="1Dr-ry-EHb"/>
+                            <constraint firstItem="fMd-t6-Cg1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VRb-sI-NGN" secondAttribute="trailing" symbolic="YES" id="1qX-TQ-XLh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j0k-Ed-6Eg" secondAttribute="trailing" constant="143.66666666666666" id="LVd-5i-FtE"/>
                             <constraint firstItem="VRb-sI-NGN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MFu-Wj-wxR"/>
                             <constraint firstItem="VRb-sI-NGN" firstAttribute="top" secondItem="j0k-Ed-6Eg" secondAttribute="bottom" constant="76.333333333333314" id="PYU-x8-VhY"/>
@@ -71,6 +72,7 @@
                             <constraint firstItem="j0k-Ed-6Eg" firstAttribute="top" secondItem="N8f-Zk-KwI" secondAttribute="bottom" constant="58.666666666666686" id="Reu-wh-Ooo"/>
                             <constraint firstItem="VRb-sI-NGN" firstAttribute="leading" secondItem="aeq-cj-97k" secondAttribute="trailing" constant="55.329999999999998" id="SjC-ZO-5zE"/>
                             <constraint firstItem="aeq-cj-97k" firstAttribute="top" secondItem="j0k-Ed-6Eg" secondAttribute="bottom" constant="75.666666666666686" id="UXe-8A-Vfx"/>
+                            <constraint firstItem="aeq-cj-97k" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="i6X-qu-PgX"/>
                             <constraint firstItem="N8f-Zk-KwI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="175.66999999999999" id="u7s-lx-ryc"/>
                             <constraint firstItem="N8f-Zk-KwI" firstAttribute="centerX" secondItem="VRb-sI-NGN" secondAttribute="centerX" id="uk8-ec-IKz"/>
                             <constraint firstItem="fMd-t6-Cg1" firstAttribute="top" secondItem="j0k-Ed-6Eg" secondAttribute="bottom" constant="76" id="ukb-Lf-Q8N"/>
