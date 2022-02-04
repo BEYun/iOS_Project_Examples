@@ -16,6 +16,8 @@
 		AE16B94F27ABE56B00EAFF5B /* SpaceAdventureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE16B94E27ABE56B00EAFF5B /* SpaceAdventureTests.swift */; };
 		AE16B95927ABE56B00EAFF5B /* SpaceAdventureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE16B95827ABE56B00EAFF5B /* SpaceAdventureUITests.swift */; };
 		AE16B95B27ABE56B00EAFF5B /* SpaceAdventureUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE16B95A27ABE56B00EAFF5B /* SpaceAdventureUITestsLaunchTests.swift */; };
+		AE1791B227AD45D600FF4991 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1791B127AD45D600FF4991 /* Planet.swift */; };
+		AE73662927AD4B3B00F1A15B /* PlanetNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE73662827AD4B3B00F1A15B /* PlanetNameVC.swift */; };
 		AE9A7D8C27AC076E0052926F /* PlanetarySystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A7D8B27AC076E0052926F /* PlanetarySystem.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		AE16B95427ABE56B00EAFF5B /* SpaceAdventureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceAdventureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE16B95827ABE56B00EAFF5B /* SpaceAdventureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceAdventureUITests.swift; sourceTree = "<group>"; };
 		AE16B95A27ABE56B00EAFF5B /* SpaceAdventureUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceAdventureUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AE1791B127AD45D600FF4991 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		AE73662827AD4B3B00F1A15B /* PlanetNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetNameVC.swift; sourceTree = "<group>"; };
 		AE9A7D8B27AC076E0052926F /* PlanetarySystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetarySystem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +113,8 @@
 				AE16B94027ABE56B00EAFF5B /* Assets.xcassets */,
 				AE16B94227ABE56B00EAFF5B /* LaunchScreen.storyboard */,
 				AE16B94527ABE56B00EAFF5B /* Info.plist */,
+				AE1791B127AD45D600FF4991 /* Planet.swift */,
+				AE73662827AD4B3B00F1A15B /* PlanetNameVC.swift */,
 			);
 			path = SpaceAdventure;
 			sourceTree = "<group>";
@@ -265,6 +271,8 @@
 				AE9A7D8C27AC076E0052926F /* PlanetarySystem.swift in Sources */,
 				AE16B93827ABE56A00EAFF5B /* AppDelegate.swift in Sources */,
 				AE16B93A27ABE56A00EAFF5B /* SceneDelegate.swift in Sources */,
+				AE1791B227AD45D600FF4991 /* Planet.swift in Sources */,
+				AE73662927AD4B3B00F1A15B /* PlanetNameVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +451,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZAL935K4Y8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SpaceAdventure/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -470,6 +479,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZAL935K4Y8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SpaceAdventure/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -9,13 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let PlanetarySystem1 = PlanetarySystem(name: "Solar System")
-    
-    let PlanetarySystem2 = PlanetarySystem(name: "Earth")
+    let PlanetarySystem1 = PlanetarySystem(name: "Solar System", planets: [Planet]())
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         
         introduction()
         start()
@@ -30,10 +30,9 @@ class ViewController: UIViewController {
     }
     
     func introduction() {
-        let numberOfPlanets: Int = 0
         let diameterOfEarth: Double = 24859.82
         
-        firstTextView.text = "Welcome to our \(PlanetarySystem2.name)! There are \(numberOfPlanets) planets to explore. You are currently on Earth, which has a circumference of \(diameterOfEarth) miles"
+        firstTextView.text = "Welcome to our \(PlanetarySystem1.name)! There are \(PlanetarySystem1.planets.count) planets to explore. You are currently on Earth, which has a circumference of \(diameterOfEarth) miles"
     }
 
     func response(q: String) -> String {
@@ -55,9 +54,16 @@ class ViewController: UIViewController {
         
         if decision == "Y" {
             secondTextView.text = "OK, Traveling to..."
+            let count: Int = PlanetarySystem1.planets.count
+            let index: Int = Int.random(in: 0...count)
+            let planet = PlanetarySystem1.planets[index]
+            
+            secondTextView.text = "OK, Traveling to \(planet.name)"
         }
         
         else if decision == "N" {
+            performSegue(withIdentifier: "show", sender: self)
+            
             secondTextView.text = "OK, name the planet you would..."
         }
         

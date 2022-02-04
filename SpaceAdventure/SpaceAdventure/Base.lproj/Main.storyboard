@@ -80,11 +80,59 @@
                         <outlet property="myLabel" destination="W2f-JM-Dht" id="b9K-Rp-9Ul"/>
                         <outlet property="secondTextField" destination="zED-yo-V0k" id="9tD-GL-1Fw"/>
                         <outlet property="secondTextView" destination="c0u-rZ-K4g" id="SyQ-KQ-SSh"/>
+                        <segue destination="bvO-Ax-aYh" kind="show" identifier="show" id="t1t-b0-5LU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-23.188405797101453" y="47.544642857142854"/>
+            <point key="canvasLocation" x="-206" y="56"/>
+        </scene>
+        <!--Planet NameVC-->
+        <scene sceneID="wU0-zG-VR9">
+            <objects>
+                <viewController id="bvO-Ax-aYh" customClass="PlanetNameVC" customModule="SpaceAdventure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZF3-RN-xa1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Planet Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c0e-Pw-odi">
+                                <rect key="frame" x="107" y="147" width="200" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BAS-6s-cTa">
+                                <rect key="frame" x="87" y="360" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQY-hi-ibz">
+                                <rect key="frame" x="137" y="233" width="140" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="OK"/>
+                                <connections>
+                                    <action selector="planetNameButton:" destination="bvO-Ax-aYh" eventType="touchUpInside" id="tq8-qG-5rB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="liC-5Z-QEP"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pme-Ow-Tok"/>
+                    <connections>
+                        <outlet property="PlanetNameTF" destination="c0e-Pw-odi" id="M2e-wM-11i"/>
+                        <outlet property="PlanetNameTV" destination="BAS-6s-cTa" id="3oY-v6-Yvd"/>
+                        <outlet property="planetNameTF" destination="c0e-Pw-odi" id="H2K-y1-GMf"/>
+                        <outlet property="planetNameTV" destination="BAS-6s-cTa" id="dtA-f9-w5i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7u1-iD-ow9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="618.84057971014499" y="55.580357142857139"/>
         </scene>
     </scenes>
     <resources>
@@ -99,6 +147,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

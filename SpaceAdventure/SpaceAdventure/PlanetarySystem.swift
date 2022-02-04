@@ -9,10 +9,14 @@ import Foundation
 
 class PlanetarySystem {
     
-    var name: String = ""
+    var name: String
     
-    init(name: String) {
+    var planets: [Planet]
+    
+    
+    init(name: String, planets: [Planet]) {
         self.name = name
+        self.planets = planets
     }
     
     
