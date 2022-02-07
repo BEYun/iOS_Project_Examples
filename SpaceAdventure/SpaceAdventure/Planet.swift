@@ -17,3 +17,10 @@ class Planet {
     }
     
 }
+var planetData =
+    [   "Mercury" : "Hot Planet",
+        "Venus" : "Cloudy Planet",
+        "Earth" : "Here",
+        "Mars" : "Red Planet",
+        "Jupyter" : "Gas Planet",
+        "Neptune" : "Cold Planet" ]

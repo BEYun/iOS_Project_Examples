@@ -7,10 +7,10 @@
 
 import UIKit
 
+let PlanetarySystem1 = PlanetarySystem(name: "Solar System")
+
 class ViewController: UIViewController {
     
-    let PlanetarySystem1 = PlanetarySystem(name: "Solar System", planets: [Planet]())
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         introduction()
         start()
         print(response(q: "Who are you?"))
+        
         
     }
 
@@ -53,12 +54,14 @@ class ViewController: UIViewController {
         let decision = secondTextField.text
         
         if decision == "Y" {
-            secondTextView.text = "OK, Traveling to..."
-            let count: Int = PlanetarySystem1.planets.count
-            let index: Int = Int.random(in: 0...count)
-            let planet = PlanetarySystem1.planets[index]
             
-            secondTextView.text = "OK, Traveling to \(planet.name)"
+            if let rp = PlanetarySystem1.randomPlanet {
+
+                secondTextView.text = "OK, Traveling to \(rp.name)"
+            }
+            else {
+                secondTextView.text = "Sorry, There are no planets"
+            }
         }
         
         else if decision == "N" {
