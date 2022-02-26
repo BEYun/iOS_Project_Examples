@@ -1,7 +1,20 @@
-import UIKit
+import Foundation
 
-let date = Date()
-let form =  DateFormatter()
-form.timeStyle = .short
+let hello = { () -> () in
+    print("hello")
+}
 
-let stringDate = form.string(from: date)
+hello()
+
+let hello2 = { (name: String) -> String in
+    return "Hello, \(name)"
+}
+
+hello2("Gunter")
+
+func doSomething(closure: () -> ()) {
+    closure()
+}
+
+doSomething (closure: { <#T##() -> ()#> in
+})
