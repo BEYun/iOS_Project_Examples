@@ -12,7 +12,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="ojQ-um-Tiy">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2hC-V2-ZFY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController id="NgD-YE-saa" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9QM-g0-tbq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -24,6 +23,7 @@
                         <segue destination="418-sK-mqT" kind="relationship" relationship="viewControllers" id="Be1-5A-XpB"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2hC-V2-ZFY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1646" y="339"/>
         </scene>
@@ -133,7 +133,7 @@
         <!--Diary Detail View Controller-->
         <scene sceneID="J8f-Hf-VLX">
             <objects>
-                <viewController id="nrc-z1-Ve4" customClass="DiaryDetailViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DiaryDetailViewController" id="nrc-z1-Ve4" customClass="DiaryDetailViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MHw-eQ-ma7">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,6 +195,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="48.333333333333336" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="수정"/>
+                                        <connections>
+                                            <action selector="tapEditButton:" destination="nrc-z1-Ve4" eventType="touchUpInside" id="izl-wX-5M0"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3Y-Ou-1lX">
                                         <rect key="frame" x="98.333333333333329" y="0.0" width="48.333333333333329" height="31"/>
@@ -202,6 +205,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="삭제">
                                             <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tapDeleteButton:" destination="nrc-z1-Ve4" eventType="touchUpInside" id="cOW-X2-p65"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -225,6 +231,11 @@
                             <constraint firstItem="8i0-lo-5NE" firstAttribute="centerX" secondItem="aLi-bf-H7R" secondAttribute="centerX" id="z3z-zv-g1p"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentsLabel" destination="2Xi-7S-ouW" id="u6L-VF-hVR"/>
+                        <outlet property="dateLabel" destination="Bj6-4S-RmB" id="hRX-Gs-BRE"/>
+                        <outlet property="titleLabel" destination="iVa-ST-dgS" id="cSv-Zz-Vwg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K5i-6Q-zY1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -314,7 +325,7 @@
         <!--일기 작성-->
         <scene sceneID="Fd5-ag-Iex">
             <objects>
-                <viewController id="aVF-Gp-8jb" customClass="WriteDiaryViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WriteDiaryViewController" id="aVF-Gp-8jb" customClass="WriteDiaryViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0bG-cV-KF4">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
