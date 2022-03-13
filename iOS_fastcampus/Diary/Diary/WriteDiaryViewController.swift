@@ -90,21 +90,30 @@ class WriteDiaryViewController: UIViewController {
         guard let title = self.titleTextField.text else { return }
         guard let contents = self.contentsTextView.text else { return }
         guard let date = self.diaryDate else { return }
-        let diary = Diary(title: title, contents: contents, date: date, isStar: false)
         
         switch self.diaryEditorMode {
         case .new:
+            let diary = Diary(
+                uuidString:UUID().uuidString,
+                title: title,
+                contents: contents,
+                date: date,
+                isStar: false)
             self.delegate?.didSelectRegister(diary: diary)
-        case let .edit(IndexPath, _):
+        case let .edit(_, diary):
             // post 메소드의 name 파라미터는 notification의 이름으로, observer에서 설정한 이름의 NotificationCenter의 이벤트가 발생하는 지 확인할 때 사용
             // object 파라미터는 notificationCenter를 통헤 전달할 객체를 선언
             // userInfo 파라미터는 NotificationCenter과 관련된 값을 넘겨주는 파라미터
+            let diary = Diary(
+                uuidString: diary.uuidString,
+                title: title,
+                contents: contents,
+                date: date,
+                isStar: diary.isStar)
             NotificationCenter.default.post(
                 name: NSNotification.Name("editDiary"),
                 object: diary,
-                userInfo: [
-                    "indexPath.row": IndexPath.row
-                ]
+                userInfo: nil
             )
         }
         self.navigationController?.popViewController(animated: true)

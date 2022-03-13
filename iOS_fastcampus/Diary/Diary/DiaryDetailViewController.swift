@@ -7,15 +7,12 @@
 
 import UIKit
 
-protocol DiaryDetailViewDelegate: AnyObject {
-    func didSelectDelete(indexPath: IndexPath)
-}
-
 class DiaryDetailViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentsLabel: UITextView!
     @IBOutlet weak var dateLabel: UILabel!
-    weak var delegate: DiaryDetailViewDelegate?
+    
+    var starButton: UIBarButtonItem?
     
     var diary: Diary?
     var indexPath: IndexPath?
@@ -23,6 +20,11 @@ class DiaryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(starDiaryNotification(_:)),
+            name: NSNotification.Name("starDiary"),
+            object: nil)
     }
     
     // 프로퍼티를 통해 전달받은 객체를 뷰에 초기화
@@ -31,6 +33,11 @@ class DiaryDetailViewController: UIViewController {
         self.titleLabel.text = diary.title
         self.contentsLabel.text = diary.contents
         self.dateLabel.text = self.dateToString(date: diary.date)
+        self.starButton = UIBarButtonItem(image: nil, style: .plain, target: self, action: #selector(tapStarButton))
+        self.starButton?.image = diary.isStar ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+        self.starButton?.tintColor = .orange
+        self.navigationItem.rightBarButtonItem = self.starButton
+        
     }
     
     // Date 타입을 전달받으면 문자열로 반환해주는 메소드
@@ -44,9 +51,20 @@ class DiaryDetailViewController: UIViewController {
     // 수정된 Diary 객체를 전달 받아 뷰에 업데이트하는 셀렉터
     @objc func editDiaryNotification(_ notification: Notification) {
         guard let diary = notification.object as? Diary else { return }
-        guard let row = notification.userInfo?["indexPath.row"] as? Int else { return }
         self.diary = diary
         // 수정된 값으로 뷰 업데이트
+        self.configureView()
+    }
+    
+    // 즐겨찾기 표시에 이벤트 발생 시 DiaryDetailViewController의 diary 객체의 isStar를 업데이트하는 셀렉터 구현
+    @objc func starDiaryNotification(_ notification: Notification) {
+        guard let starDiary = notification.object as? [String: Any] else { return }
+        guard let isStar = starDiary["isStar"] as? Bool else { return }
+        guard let uuidString = starDiary["uuidString"] as? String else { return }
+        guard let diary = self.diary else { return }
+        if diary.uuidString == uuidString {
+            self.diary?.isStar = isStar
+        }
         self.configureView()
     }
     
@@ -69,9 +87,30 @@ class DiaryDetailViewController: UIViewController {
     }
     
     @IBAction func tapDeleteButton(_ sender: UIButton) {
-        guard let indexPath = self.indexPath else { return }
-        self.delegate?.didSelectDelete(indexPath: indexPath)
+        guard let uuidString = self.diary?.uuidString else { return }
+        NotificationCenter.default.post(
+            name: NSNotification.Name("deleteDiary"),
+            object: uuidString,
+            userInfo: nil)
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func tapStarButton() {
+        guard let isStar = self.diary?.isStar else { return }
+        if isStar {
+            self.starButton?.image = UIImage(systemName: "star")
+        } else {
+            self.starButton?.image = UIImage(systemName: "star.fill")
+        }
+        self.diary?.isStar = !isStar
+        NotificationCenter.default.post(
+            name: NSNotification.Name("starDiary"),
+            object: [
+                "diary": self.diary,
+                "isStar": self.diary?.isStar ?? false,
+                "uuidString": self.diary?.uuidString
+            ],
+            userInfo: nil)
     }
     
     deinit {
